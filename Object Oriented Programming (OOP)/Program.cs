@@ -23,7 +23,7 @@ namespace ObjectOrientedProgramming
     }*/
 
     // 2. Encapsulation
-    class Person
+    /*class Person
     {
         private string Name;
         private int Age;
@@ -88,6 +88,39 @@ namespace ObjectOrientedProgramming
             obj.getName();
             obj.getAge();
             Console.ReadLine();
+        }
+    }*/
+
+    // 3. Abstraction
+    public interface IShape
+    {
+        void Draw();
+    }
+
+    public class Circle : IShape
+    {
+        public void Draw()
+        {
+            Console.WriteLine("Drawing a circle.");
+        }
+    }
+
+    public class Rectangle : IShape
+    {
+        public void Draw()
+        {
+            Console.WriteLine("Drawing a rectangle.");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            IShape shape1 = new Circle();
+            IShape shape2 = new Rectangle();
+            shape1.Draw();
+            shape2.Draw();
         }
     }
 }
